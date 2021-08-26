@@ -1,7 +1,7 @@
 # devops-netology
-devops-netology
-#Poskrebyshev Nikolay
+Poskrebyshev Nikolay
 ##Описание .gitignore
+
 ### Не попадут в git:
 1. Все файлы в всех каталогах в каталоге .terraform
 2. Все файлы с расширением .tfstate или содержащие в названии .tfstate.
