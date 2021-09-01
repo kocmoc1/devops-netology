@@ -10,7 +10,7 @@ Poskrebyshev Nikolay
 5. Файлы .terraformrc, terraform.rc
 
 
-#Домашнее задание к занятию «2.4. Инструменты Git»
+# Домашнее задание к занятию «2.4. Инструменты Git»
 1. Hash: aefead2207ef7e2aa5dc81a34aedf0cad4c32545
  Comment: Update CHANGELOG.md
 1. tag: v0.12.23
