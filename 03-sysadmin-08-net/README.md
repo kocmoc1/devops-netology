@@ -239,4 +239,4 @@
         systemd-resolv - системная служба кэширования DNS
         Avahi-daemon это система обеспечивающая обнаружение сервисов в локальной сети. 
         
-1. ![Network Map](003-sysadmin-08-net.drawio.png)
+1. ![Network Map](03-sysadmin-08-net.drawio.png)
