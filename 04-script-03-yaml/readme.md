@@ -15,4 +15,4 @@
             ]
         }
         
-1. [Script](02-py-2.py)
+1. [Script](02-yaml.py)
