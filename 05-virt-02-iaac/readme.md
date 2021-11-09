@@ -20,7 +20,7 @@
             nposk@userver-1:~$ virtualbox -h  
             Oracle VM VirtualBox VM Selector v6.1.26    
         
-1. Не смог запустить playbook, не могу найти ошибку.
+1. ИСПРАВЛЕНО, РЕШЕНИЕ НИЖЕ Не смог запустить playbook, не могу найти ошибку.
         
         ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
         JSON: Expecting value: line 1 column 1 (char 0)
@@ -38,3 +38,67 @@
                   ^ here
         Ansible failed to complete successfully. Any error output should be
         visible above. Please fix these errors and try again.
+        
+        
+Проблема была в символе "-", т.к. копировал текст из лекции то не правильно проставился символ "минус", заместо него скопировался символ "—".  
+Немного можернизировал playbook, что бы не заходить в виртуалку, и запуска провижин отдельно.
+
+        nposk@userver-1:~/Desktop/vagrant$ vagrant provision
+        ==> server1.netology: Running provisioner: ansible...
+            server1.netology: Running ansible-playbook...
+        
+        PLAY [nodes] *******************************************************************
+        
+        TASK [Gathering Facts] *********************************************************
+        ok: [server1.netology]
+        
+        TASK [Create directory for ssh-keys] *******************************************
+        ok: [server1.netology]
+        
+        TASK [Adding rsa-key in /root/.ssh/authorized_keys] ****************************
+        ok: [server1.netology]
+        
+        TASK [Checking DNS] ************************************************************
+        changed: [server1.netology]
+        
+        TASK [Installing tools] ********************************************************
+        ok: [server1.netology]
+        
+        TASK [Installing docker] *******************************************************
+        [WARNING]: Consider using the get_url or uri module rather than running 'curl'.
+        If you need to use command because get_url or uri is insufficient you can add
+        'warn: false' to this command task or set 'command_warnings=False' in
+        ansible.cfg to get rid of this message.
+        changed: [server1.netology]
+        
+        TASK [Add the current user to docker group] ************************************
+        changed: [server1.netology]
+        
+        TASK [print to stdout] *********************************************************
+        changed: [server1.netology]
+        
+        TASK [debug] *******************************************************************
+        ok: [server1.netology] => {
+            "msg": {
+                "changed": true,
+                "cmd": [
+                    "docker",
+                    "ps"
+                ],
+                "delta": "0:00:00.035473",
+                "end": "2021-11-09 03:40:27.239579",
+                "failed": false,
+                "rc": 0,
+                "start": "2021-11-09 03:40:27.204106",
+                "stderr": "",
+                "stderr_lines": [],
+                "stdout": "CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES",
+                "stdout_lines": [
+                    "CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES"
+                ]
+            }
+        }
+        
+        PLAY RECAP *********************************************************************
+        server1.netology           : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
