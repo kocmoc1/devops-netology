@@ -167,6 +167,51 @@ test_db-2021-11-26.sql
 
 Восстановление
 ```buildoutcfg
-psql test_db < test_db-2021-11-26.sql
+postgres@0b23fdce97f9:/backup$ psql restored_db < backup-2021-11-29.sql
+SET
+SET
+SET
+SET
+SET
+ set_config
+------------
+
+(1 row)
+
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+ALTER TABLE
+ALTER TABLE
+COPY 5
+COPY 5
+ setval
+--------
+      5
+(1 row)
+
+ setval
+--------
+      5
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+ALTER TABLE
+postgres@0b23fdce97f9:/backup$
 
 ```
