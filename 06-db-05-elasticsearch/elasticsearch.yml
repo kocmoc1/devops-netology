@@ -1,0 +1,8 @@
+# Configure the following settings in your elasticsearch.yml file
+cluster.name: netology-elk      # give the cluster a descriptive name
+node.name: netology_test            # give the node a descriptive name
+network.host: 0.0.0.0       # change network binding
+discovery.type: single-node # configure as single-node cluster
+path.data: /var/lib/elasticsearch
+path.repo:
+  - /usr/share/elasticsearch-7.16.0/snapshots
