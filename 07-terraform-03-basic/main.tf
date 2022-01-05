@@ -77,13 +77,14 @@ resource "aws_instance" "netology-instance-for"  {
   for_each = {
     instance = local.instance_loop[terraform.workspace],
   }
-  instance_type = local.instance_loop[terraform.workspace]
+
+  name = "instance-${each.key}"
+  instance_type = "${each.value}"
   ami = data.aws_ami.latest-ubuntu.id
   network_interface {
     network_interface_id = aws_network_interface.eth.id
     device_index         = 0
   }
-  tags = { Name = each.instance.value }
   lifecycle {
   create_before_destroy = true
   }
