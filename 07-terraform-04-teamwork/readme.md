@@ -3,8 +3,8 @@
 ## 1 ---
 
 ## 2
-[server.yaml](07-terraform-04-teamwork/server.yaml)
-[atlantis.yaml](07-terraform-04-teamwork/atlantis.yaml)
+[server.yaml](server.yaml)  
+[atlantis.yaml](atlantis.yaml)
 ## 3
 Особых отличий в создании инстанса не заметил. Тот-же набор параметров. Думаю что использовать его необходимости нет.
 
