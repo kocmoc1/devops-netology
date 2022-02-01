@@ -77,8 +77,9 @@ resource "aws_instance" "netology-instance-for"  {
   for_each = {
     instance = local.instance_loop[terraform.workspace],
   }
-
-  name = "instance-${each.key}"
+  tags= {
+    name = "instance-${each.key}"
+  }
   instance_type = "${each.value}"
   ami = data.aws_ami.latest-ubuntu.id
   network_interface {

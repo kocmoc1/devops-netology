@@ -10,10 +10,10 @@ output "current_region" {
   value = data.aws_region.current.name
 }
 
-output "private_ip" {
-  description = "The private IP address assigned to the instance."
-  value       = try(aws_instance.netology-instance.private_ip)
-}
+//output "private_ip" {
+//  description = "The private IP address assigned to the instance."
+//  value       = try(aws_instance.netology-instance-for.private_ip)
+//}
 
 output "sudnet_id" {
   description = "The private IP address assigned to the instance."
