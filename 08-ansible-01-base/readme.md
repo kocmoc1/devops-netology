@@ -4,34 +4,16 @@
 ```buildoutcfg
 
 ~$ ansible-playbook site.yml -i inventory/test.yml
-PLAY [Print os facts] **************************************************************************************************
-TASK [Gathering Facts] *************************************************************************************************
-ok: [localhost]
-TASK [Print OS] ********************************************************************************************************
-ok: [localhost] => {
-    "msg": "Ubuntu"
-}
+
 TASK [Print fact] ******************************************************************************************************
 ok: [localhost] => {
     "msg": 12
 }
-PLAY RECAP *************************************************************************************************************
-localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 ## 4
 ```buildoutcfg
 ansible-playbook site.yml -i inventory/prod.yml
-PLAY [Print os facts] **************************************************************************************************
-TASK [Gathering Facts] *************************************************************************************************
-ok: [ubuntu]
-ok: [centos7]
-TASK [Print OS] ********************************************************************************************************
-ok: [centos7] => {
-    "msg": "CentOS"
-}
-ok: [ubuntu] => {
-    "msg": "Ubuntu"
-}
+
 TASK [Print fact] ******************************************************************************************************
 ok: [centos7] => {
     "msg": "el"
@@ -39,25 +21,12 @@ ok: [centos7] => {
 ok: [ubuntu] => {
     "msg": "deb"
 }
-PLAY RECAP *************************************************************************************************************
-centos7                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
 ## 6
 ```buildoutcfg
 ansible-playbook site.yml -i inventory/prod.yml
-PLAY [Print os facts] **************************************************************************************************
-TASK [Gathering Facts] *************************************************************************************************
-ok: [ubuntu]
-ok: [centos7]
-TASK [Print OS] ********************************************************************************************************
-ok: [centos7] => {
-    "msg": "CentOS"
-}
-ok: [ubuntu] => {
-    "msg": "Ubuntu"
-}
+
 TASK [Print fact] ******************************************************************************************************
 ok: [centos7] => {
     "msg": "el default fact"
@@ -65,26 +34,14 @@ ok: [centos7] => {
 ok: [ubuntu] => {
     "msg": "deb default fact"
 }
-PLAY RECAP *************************************************************************************************************
-centos7                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
 ```
 
 ## 8 
 ```buildoutcfg
 ansible-playbook site.yml -i inventory/prod.yml --ask-vault-pass
 Vault password:
-PLAY [Print os facts] **************************************************************************************************
-TASK [Gathering Facts] *************************************************************************************************
-ok: [ubuntu]
-ok: [centos7]
-TASK [Print OS] ********************************************************************************************************
-ok: [centos7] => {
-    "msg": "CentOS"
-}
-ok: [ubuntu] => {
-    "msg": "Ubuntu"
-}
+
 TASK [Print fact] ******************************************************************************************************
 ok: [centos7] => {
     "msg": "el default fact"
@@ -92,9 +49,7 @@ ok: [centos7] => {
 ok: [ubuntu] => {
     "msg": "deb default fact"
 }
-PLAY RECAP *************************************************************************************************************
-centos7                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
 ```
 
 ## 9
@@ -107,21 +62,6 @@ ansible.builtin.local – execute on controller
 ansible-playbook site.yml -i inventory/prod.yml --ask-vault-pass
 Vault password:
 
-PLAY [Print os facts] **************************************************************************************************
-TASK [Gathering Facts] *************************************************************************************************
-ok: [locahost]
-ok: [ubuntu]
-ok: [centos7]
-TASK [Print OS] ********************************************************************************************************
-ok: [locahost] => {
-    "msg": "Ubuntu"
-}
-ok: [centos7] => {
-    "msg": "CentOS"
-}
-ok: [ubuntu] => {
-    "msg": "Ubuntu"
-}
 TASK [Print fact] ******************************************************************************************************
 ok: [locahost] => {
     "msg": "all default fact"
@@ -132,10 +72,7 @@ ok: [centos7] => {
 ok: [ubuntu] => {
     "msg": "deb default fact"
 }
-PLAY RECAP *************************************************************************************************************
-centos7                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-locahost                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
 ```
 
 ## 3*
@@ -225,3 +162,6 @@ fedora                     : ok=3    changed=0    unreachable=0    failed=0    s
 locahost                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
+
+## 5*
+[run_docker.sh](run_docker.sh) 
