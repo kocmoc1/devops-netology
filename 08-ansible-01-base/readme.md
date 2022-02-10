@@ -1,78 +1,40 @@
 # Домашнее задание к занятию "08.01 Введение в Ansible"
 
 ## 1
+group_vars/all/examp.yml
+## 2
+ansible-playbook site.yml -i inventory/test.yml
+
+## 3
 ```buildoutcfg
-
-~$ ansible-playbook site.yml -i inventory/test.yml
-
-TASK [Print fact] ******************************************************************************************************
-ok: [localhost] => {
-    "msg": 12
-}
+ansible-vault create group_vars/deb/examp.yml
 ```
-## 4
+
+## 4 
 ```buildoutcfg
-ansible-playbook site.yml -i inventory/prod.yml
-
-TASK [Print fact] ******************************************************************************************************
-ok: [centos7] => {
-    "msg": "el"
-}
-ok: [ubuntu] => {
-    "msg": "deb"
-}
+ansible-vault decrypt group_vars/deb/examp.yml
 ```
+
+## 5 
+ansible localhost -m ansible.builtin.debug -a var="some_fact" -e "group_vars/deb/examp.yml" --ask-vault-pass
 
 ## 6
 ```buildoutcfg
-ansible-playbook site.yml -i inventory/prod.yml
-
-TASK [Print fact] ******************************************************************************************************
-ok: [centos7] => {
-    "msg": "el default fact"
-}
-ok: [ubuntu] => {
-    "msg": "deb default fact"
-}
-
+ansible-playbook site.yml -i inventory/prod.yml --ask-vault-pass
 ```
+## 7
+winrm
 
 ## 8 
-```buildoutcfg
-ansible-playbook site.yml -i inventory/prod.yml --ask-vault-pass
-Vault password:
-
-TASK [Print fact] ******************************************************************************************************
-ok: [centos7] => {
-    "msg": "el default fact"
-}
-ok: [ubuntu] => {
-    "msg": "deb default fact"
-}
-
+```
+ansible-doc -t connection ssh
 ```
 
 ## 9
 ```buildoutcfg
-ansible.builtin.local – execute on controller
-```
-
-## 11
-```buildoutcfg
-ansible-playbook site.yml -i inventory/prod.yml --ask-vault-pass
-Vault password:
-
-TASK [Print fact] ******************************************************************************************************
-ok: [locahost] => {
-    "msg": "all default fact"
-}
-ok: [centos7] => {
-    "msg": "el default fact"
-}
-ok: [ubuntu] => {
-    "msg": "deb default fact"
-}
-
+- remote_user
+        User name with which to login to the remote server, normally set by the remote_user
+        keyword.
 ```
 
 ## 3*
