@@ -21,7 +21,7 @@ elastik_host: "ubuntu-el"
 ```
 tags: elastic, kibana
 
-##Основная часть
+## Основная часть
 
 ### "Запустите ansible-lint site.yml и исправьте ошибки, если они есть."
 ```
