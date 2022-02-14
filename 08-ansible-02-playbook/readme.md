@@ -1,6 +1,7 @@
 # Домашнее задание к занятию "08.02 Работа с Playbook"
 Playbook устанавливает Elastic и Kibana на managed хосты.
-Так как инвентори написан для docker контейнеров, то become: true закоментировано.  
+Так как инвентори написан для docker контейнеров, то become: true закоментировано.
+Для корректной работы необходимо положить jdk-{{ java_jdk_version }}_linux-x64_bin.tar.gz в коорень директории.
 Инвентори разделен на две группы ubuntu-el - Elastic, ubuntu-ki - Kibana
 Vars all:
 ```
@@ -20,8 +21,8 @@ elastik_host: "ubuntu-el"
 ```
 tags: elastic, kibana
 
-
 ##Основная часть
+
 ### "Запустите ansible-lint site.yml и исправьте ошибки, если они есть."
 ```
 nposk@prm-niuposkr:/mnt/d/netology/08-ansible-02-playbook$ ansible-lint site.yml
