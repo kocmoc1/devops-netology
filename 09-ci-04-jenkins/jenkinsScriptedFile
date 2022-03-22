@@ -1,0 +1,22 @@
+node("linux"){
+    input {
+      message ''
+      parameters {
+        booleanParam defaultValue: false, name: 'prod_run '
+      }
+    stage("Git checkout"){
+        git credentialsId: 'nposk', url: 'https://github.com/kocmoc1/netology_kibana_role.git'
+    }
+    stage("Sample define secret_check"){
+        prod_run=true
+    }
+    stage("Run playbook"){
+        if (secret_check){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml--check --diff'
+        }
+
+    }
+}
