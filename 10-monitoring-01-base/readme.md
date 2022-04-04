@@ -56,6 +56,27 @@ crontab
 22-04-04-awesome-monitoring.log
 
 ```
-['{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515760, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515772, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380516, "MemAvailable": 12515520, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380280, "MemAvailable": 12515284, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380524, "MemAvailable": 12515528, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515780, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10379776, "MemAvailable": 12514780, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380272, "MemAvailable": 12515276, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10379760, "MemAvailable": 12514764, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380012, "MemAvailable": 12515016, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10379768, "MemAvailable": 12514772, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380272, "MemAvailable": 12515276, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380280, "MemAvailable": 12515284, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380524, "MemAvailable": 12515528, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380524, "MemAvailable": 12515528, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380516, "MemAvailable": 12515520, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380516, "MemAvailable": 12515520, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10381028, "MemAvailable": 12516032, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10381020, "MemAvailable": 12516024, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10381028, "MemAvailable": 12516032, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515788, "CPUNow": "0.00"}', '{"MemTotal": 13042996, "MemFree": 10380264, "MemAvailable": 12515276, "CPUNow": "0.00"}']
+['{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515760, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515772, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380516, "MemAvailable": 12515520, "CPUNow": "0.00"}',
+'{"MemTotal": 13042996, "MemFree": 10380280, "MemAvailable": 12515284, "CPUNow": "0.00"}',
+'{"MemTotal": 13042996, "MemFree": 10380524, "MemAvailable": 12515528, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515780, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10379776, "MemAvailable": 12514780, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380272, "MemAvailable": 12515276, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10379760, "MemAvailable": 12514764, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380012, "MemAvailable": 12515016, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10379768, "MemAvailable": 12514772, "CPUNow": "0.00"}',
+'{"MemTotal": 13042996, "MemFree": 10380272, "MemAvailable": 12515276, "CPUNow": "0.00"}',
+'{"MemTotal": 13042996, "MemFree": 10380280, "MemAvailable": 12515284, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380524, "MemAvailable": 12515528, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380524, "MemAvailable": 12515528, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380516, "MemAvailable": 12515520, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380516, "MemAvailable": 12515520, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10381028, "MemAvailable": 12516032, "CPUNow": "0.00"}',
+'{"MemTotal": 13042996, "MemFree": 10381020, "MemAvailable": 12516024, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10381028, "MemAvailable": 12516032, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380776, "MemAvailable": 12515788, "CPUNow": "0.00"}', 
+'{"MemTotal": 13042996, "MemFree": 10380264, "MemAvailable": 12515276, "CPUNow": "0.00"}']
 
 ```
