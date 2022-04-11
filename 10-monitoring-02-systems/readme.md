@@ -11,10 +11,10 @@
         Возможность тестирования стандартными средствами.
 
 1.
-    Prometheus - Pull
+    Prometheus - Pull & Push
     TICK - Push
-    Zabbix - Pull & Push
-    VictoriaMetrics Pull
+    Zabbix - Pull
+    VictoriaMetrics - система в большей части для хранения метрик, а не для сбора.
     Nagios - Pull
 1.   
     ```
