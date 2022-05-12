@@ -1,9 +1,0 @@
----
-ubuntu-el:
-  hosts:
-    ubuntu-el:
-        ansible_connection: docker
-ubuntu-ki:
-  hosts:
-    ubuntu-ki:
-        ansible_connection: docker

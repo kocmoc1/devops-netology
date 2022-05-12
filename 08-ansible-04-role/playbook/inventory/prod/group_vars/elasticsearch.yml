@@ -1,2 +1,0 @@
----
-elastic_version: "{{ elk_stack_version }}"
