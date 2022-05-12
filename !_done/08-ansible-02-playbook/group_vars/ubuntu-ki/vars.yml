@@ -1,0 +1,4 @@
+---
+kibana_version: "7.17.0"
+kibana_home: "/opt/kibana/{{ kibana_version }}"
+elastik_host: "ubuntu-el"

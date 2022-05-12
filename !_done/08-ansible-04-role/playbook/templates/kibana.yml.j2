@@ -1,0 +1,6 @@
+server:
+  name: "elk"
+  host: "0.0.0.0"
+  port: 5601
+
+elasticsearch.hosts: {{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] }}

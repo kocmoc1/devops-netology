@@ -1,0 +1,18 @@
+node(){
+  stages{
+      stage("install deps"){
+          step("get role")){
+              git credentialsId: 'nposk', url: 'https://github.com/kocmoc1/netology_kibana_role.git'
+          }
+          steps{
+              sh '''cd netology_kibana_role
+                pip3 install -r test-requirements.txt'''
+          }
+      }
+      stage("molecule test"){
+          steps{
+              sh 'molecule test'
+          }
+      }
+  }
+}
