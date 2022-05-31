@@ -1,7 +1,7 @@
 ## Домашнее задание к занятию "12.1 Компоненты Kubernetes"
 1.   
   ![12-kubernetes-01-intro](./12-kubernetes-01-intro.PNG )
-1. 
+2-3. 
   ``` 
   PS C:\minikube> kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
 PS C:\minikube> kubectl get deployments
@@ -160,4 +160,6 @@ hello-node   LoadBalancer   10.103.185.163   <pending>     8080:32102/TCP   57s
 kubernetes   ClusterIP      10.96.0.1        <none>        443/TCP          25m
 
   ```
+  
+3. Задание 3 не совсем понял, зачем ставить если kubectl используется в задании 2? port-forward куда, картинка из задания 1 подойдет?
   
