@@ -11,11 +11,11 @@
 
 
 ## Характеристики нод
-
-| Controle Node 1 | 2 | 2048  | 100 |
-|-----------------|---|-------|-----|
-| Controle Node 1 | 2 | 2048  | 100 |
-| Worker Node 1   | 6 | 16384 | 500 |
-| Worker Node 2   | 6 | 16384 | 500 |
-| Worker Node 3   | 6 | 16384 | 500 |
-| Worker Node 3   | 6 | 16384 | 500 |
+|                 | CPU, Core | RAM, Mb | HDD, Gb |
+|-----------------|:---------:|:-------:|:-------:|
+| Controle Node 1 | 2         | 2048    | 100     |
+| Controle Node 1 | 2         | 2048    | 100     |
+| Worker Node 1   | 6         | 16384   | 500     |
+| Worker Node 2   | 6         | 16384   | 500     |
+| Worker Node 3   | 6         | 16384   | 500     |
+| Worker Node 3   | 6         | 16384   | 500     |
