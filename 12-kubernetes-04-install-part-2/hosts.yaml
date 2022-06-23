@@ -1,0 +1,43 @@
+all:
+    hosts:
+    master: # change to master - for control-plane node
+        ansible_host: 192.168.12.12
+        ip: 192.168.12.12
+        access_ip: 192.168.12.12
+        ansible_ssh_user: clusteradmin
+        ansible_ssh_private_key_file: /home/user/.ssh/user.pem
+    node1: # node1 worker
+        ansible_host: 192.168.12.13
+        ip: 192.168.12.13
+        access_ip: 192.168.12.13
+    node2: # node2 worker
+        ansible_host: 192.168.12.14
+        ip: 172.16.1.22
+        access_ip: 172.16.1.22
+    node3: # node3 worker
+        ansible_host: 192.168.12.15
+        ip: 192.168.12.15
+        access_ip: 192.168.12.15
+    node4: # node4 worker
+        ansible_host: 192.168.12.16
+        ip: 192.168.12.16
+        access_ip: 192.168.12.16
+    children:
+    kube_control_plane:
+        hosts: 
+        master:
+    kube_node:
+        hosts: 
+        node1:
+        node2:
+        node3:
+        node4:
+    etcd:
+        hosts: 
+        master:
+    k8s_cluster:
+        children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+        hosts: {}
