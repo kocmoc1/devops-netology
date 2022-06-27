@@ -1,0 +1,129 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 13-kubernetes-config-01-objects
+  labels:
+    app: 13-kubernetes-config-01-objects
+spec:
+  containers:
+  - name: frontend
+    image: frontend:0.0.1
+    ports:
+    - containerPort: 8000
+      name: http-web-frontend
+      env:
+        # PostgreSQL configuration
+        - name: BASE_URL
+          value: "http://backend-service"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 13-kubernetes-config-01-objects
+  labels:
+    app: 13-kubernetes-config-01-objects
+spec: 
+  containers:
+  - name: backend
+    image: backend:0.0.1
+    ports:
+    - containerPort: 9000
+      name: http-web-backend
+      env:
+        # PostgreSQL configuration
+        - name: DB
+          value: "postgres-headless-svc"
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres-sts
+spec:
+  serviceName: postgres-headless-svc
+  replicas: 3
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgresql
+          image: postgres:13-alpine
+          imagePullPolicy: "IfNotPresent"
+          env:
+            # PostgreSQL configuration
+            - name: POSTGRESQL_VOLUME_DIR
+              value: "/pgdata/postgresql"
+            - name: PGDATA
+              value: "/pgdata/postgresql/data"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"  
+            - name: POSTGRES_DB
+              value: "news"
+          ports:
+            - name: postgresql
+              containerPort: 5432
+              protocol: TCP
+          volumeMounts:
+            - name: data
+              mountPath: /pgdata/postgresql
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "1Gi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: 13-kubernetes-config-01-objects
+  ports:
+  - name: name-of-service-port
+    protocol: TCP
+    port: 8000
+    targetPort: http-web-frontend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: 13-kubernetes-config-01-objects
+  ports:
+  - name: name-of-service-port
+    protocol: TCP
+    port: 9000
+    targetPort: http-web-backend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-headless-svc
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: postgresql
+    port: 5432
+    targetPort: postgresql
+    protocol: TCP 
+  selector:
+    app: postgres
