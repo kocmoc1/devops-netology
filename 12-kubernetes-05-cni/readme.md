@@ -2,6 +2,27 @@
 
 1. Calico устанавливается в кластере по-умолчанию.
 
+    Доступ извне 
+    ```
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: hello-world
+      namespace: hello-world
+    spec:
+      podSelector:
+        matchLabels:
+          app: hello-world
+      ingress:
+        - from:
+          - podSelector:
+              matchLabels:
+                app: front-end
+        ports:
+        - protocol: TCP
+          port: 80
+    ```
+
 1. 
     ```
     user@user-VirtualBox:~/Desktop$ kubectl calico get node --allow-version-mismatch
