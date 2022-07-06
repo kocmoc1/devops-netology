@@ -83,7 +83,6 @@
     NAME                         READY   STATUS    RESTARTS   AGE
     13-kube-01-946944d77-pmmfp   2/2     Running   0          4s
     postgres-sts-0               1/1     Running   0          5h55m
-    postgres-sts-1               0/1     Pending   0          5h57m
     user@node1:~/Desktop$ kubectl scale --replicas=2 deployment/13-kube-01 
     deployment.apps/13-kube-01 scaled
     user@node1:~/Desktop$ kubectl get pods -o wide
