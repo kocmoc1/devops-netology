@@ -1,7 +1,7 @@
 
 # Домашнее задание к занятию "14.1 Создание и использование секретов"
 
-1.   
+## 1.   
 cluster-admin@node1:~/Desktop$ kubectl get nodes
   ```
 	
@@ -127,7 +127,7 @@ kubectl get secrets
 
 ```
 
-2. [hw.yaml](./hw.yaml)
+## 2. [hw.yaml](./hw.yaml)
 
 cluster-admin@node1:~/Desktop$ kubectl apply -f hw.yaml 
 
