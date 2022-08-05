@@ -98,7 +98,7 @@ kubectl get secret domain-cert -o json
 	}
 ```
 
-kubectl get secrets -o json > secrets.json
+kubectl get secrets -o json > secrets.json  
 kubectl get secret domain-cert -o yaml > domain-cert.yml
 
 kubectl delete secret domain-cert
