@@ -105,7 +105,7 @@
 
   ```
 
-2. 
+2. [hw.yaml](./hw.yaml)
   ```
 	cluster-admin@node1:~/Desktop$ kubectl apply -f hw.yaml 
 	secret/sample-secret configured
