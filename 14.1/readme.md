@@ -137,8 +137,10 @@ cluster-admin@node1:~/Desktop$ kubectl apply -f hw.yaml
 	deployment.apps/hello-world created
 	service/hello-world-service unchanged
 	
-	cluster-admin@node1:~/Desktop$ kubectl exec --stdin --tty hello-world-6fb5fd6c8d-6nhtc -- /bin/bash
+	
 ```	
+cluster-admin@node1:~/Desktop$ kubectl exec --stdin --tty hello-world-6fb5fd6c8d-6nhtc -- /bin/bash   
+
 
 jboss@hello-world-6fb5fd6c8d-6nhtc ~]$ env | grep SECRET
 ```
