@@ -37,14 +37,16 @@ kubectl get secret
 	sh.helm.release.v1.nfs-server.v1   helm.sh/release.v1   1      21d
 ```	
 	
-	cluster-admin@node1:~/Desktop$ kubectl get secret domain-cert
-	```
+kubectl get secret domain-cert
+
+```
 	NAME          TYPE                DATA   AGE
 	domain-cert   kubernetes.io/tls   2      39s
 	
-	```
-	cluster-admin@node1:~/Desktop$ kubectl describe secret domain-cert
-	```
+```
+
+kubectl describe secret domain-cert
+```
 	Name:         domain-cert
 	Namespace:    default
 	Labels:       <none>
@@ -56,9 +58,11 @@ kubectl get secret
 	====
 	tls.crt:  1944 bytes
 	tls.key:  3243 bytes
-	```
-	cluster-admin@node1:~/Desktop$ kubectl get secret domain-cert -o yaml
-	```
+```
+
+kubectl get secret domain-cert -o yaml
+	
+```
 	apiVersion: v1
 	data:
 	  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZiVENDQTFXZ0F3SUJBZ0lVVm1hT2FaTXl5Sjh1MFdCVEZ0WnBtdVljQ3FZd0RRWUpLb1pJaHZjTkFRRUwKQlFBd1JqRUxNQWtHQTFVRUJoTUNVbFV4RHpBTkJnTlZCQWdNQmsxdmMyTnZkekVQTUEwR0ExVUVCd3dHVFc5egpZMjkzTVJVd0V3WURWUVFEREF4elpYSjJaWEl1Ykc5allXd3dIaGNOTWpJd09EQTFNRE16TkRVMVdoY05Nekl3Ck9EQXlNRE16TkRVMVdqQkdNUXN3Q1FZRFZRUUdFd0pTVlRFUE1BMEdBMVVFQ0F3R1RXOXpZMjkzTVE4d0RRWUQKVlFRSERBWk5iM05qYjNjeEZUQVRCZ05WQkFNTURITmxjblpsY2k1c2IyTmhiRENDQWlJd0RRWUpLb1pJaHZjTgpBUUVCQlFBRGdnSVBBRENDQWdvQ2dnSUJBSkhHNkx2bXU1SnV1UjJZT3Fjb256djBvMC9Zb1FsR2VEbmhzTFdHCllFbmRqV2Vhc3RqeGE1cjAwNk5VaWtVenB2b2x2d1BwbERzMmdNczUvVmZ3NDRFLzQxTDA4aWUrVW9VWHcrZm8KemgxSmJyWmdJd1FZV2srRCtab01HazhBNEdWV0xTWHRyUUtCa1JDdUJ3aWJ4L2ErS29GbW5GTytLcDVCTTFGbQoyQndLdWFWelFGOUNnQkM5K2VveHBHUjlmNmZNYVBGMThJNmlnN1hjRXE1M1dGNWJTdGNwQlZCRWl4dEhPL3FoClMyWmRIdXFZV3ZMOGRjcTVLaWhUbzgyK3hTYUJ6TDdpa1Q3aTU4K09aYzFiNFVLM3RhSVBnZlpyaEZXbCtFaTQKQkxWc3ZIS0Y1NlF6UEdOUXpGayswMjF3OGpoKzNlV3FQb3VDRkw3dVRFYVNxZXhqVG44QnhyVkVidXIyUG4zRwpMcjNSbUMxSzY0OStIeWcwbWZBdlM2d2UzaWltZW1ZZ3A0RWhHdngwQldSYTBPbjQ3cll6WmgxVDkyRG9OVWdyCjVOdEtKc1hyWW53MUFNbkt4M1hlVys3eG5LRzk3MUJqYVo5MW9ucjNBaW5KLzl4L1NqRlJxeTlnamJDaWc5clYKemtRVzcwZlVvRmhoTk5LWFd3Ujl5Z0twaXljY1c2SGVnRm84b2pjQ3JEeDljN0ZMaFJXbTZMVFRxR0U3Snc1ZQprYVAxVzBuQzJZZ1VFMHp6dHdjejVvRUVmRTEzZ2lGTHR3VWNBb2FUQ2xORjBaVExZcTl2eEU0Mnp3ZU5HSUloCldGU2h3UFJ4UFEwNVA4aDVSVWxUM1hBbUNaUGlodDdQUGJNNzkzVjFiVlJNZWNpaEtOZ2c5ZTU2MEZ5OE94RFcKd25NOUFnTUJBQUdqVXpCUk1CMEdBMVVkRGdRV0JCUjB6Z1JpWjYxdStLTE9pclNMVS9YWTFzenVjREFmQmdOVgpIU01FR0RBV2dCUjB6Z1JpWjYxdStLTE9pclNMVS9YWTFzenVjREFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQTBHCkNTcUdTSWIzRFFFQkN3VUFBNElDQVFCeUxwdmU3WjVkL0Y0RFllZXJ3cmJyY0FzN2dJUFVqRW93bXphWHBhTHoKVGRTTHFvMFdkcGZ0WlNVLzFjMVdYOFVnOWV0cU44UEUweXBpdnV2RlVHcE12SGxLTUVpSEx5S3hoWElDczlLSApwNEUvaDVJemZaODdWOXJBSUd0bk0zdFBJbjE2YXZaYVpadGxMREZiUUdBcC9ZSUNvN0c1UWVHUk5VbU16Sm1qClRXK1BDdkdVVFV6UktkS2hTZ1BSaE1IbllnVDNkcjE4WTR1NTNWZmF4K2hBY0hoQ0dVTlFpU3B6WldRSWEwenkKaFdxQml4ejRnbkhaYW5DVkxEY2pSSmtPNWQxK3VHRll3VE5CbUFBUEloaDQyVzBWbzdKQVE1cE1uQU4wTlhtcQpVUWRRQldCay9IcUIwUnpDZmY0U2xacU03RWdSVjlkRWtaUTZVd2hvRHZ2S2xaN3FIbERlUWI1NjMyaWsreEJ5ClkxQU9HSkMwVXhPOVU3ZEtOWXkwVjA3MUJsb3MzQllZV3RLMFhqM21kVzg0MzJvdTVVbTNDamNCeFNTMzRXdm4KdmpmclYzSzBtc1U3MGxLUGt5YWJWQ2hOZkd1R0t5bzFmUlhLM0pDOS9CbjNHU21XZktDREhvL29ZREYydVdGUgpwMVRmNmlteXpWUVJSNTAwWmtTWXJxZzZUakZZdmlUbDlBTm1nd0VqSWsyQ3dZN3NnanFERUd3eHVLNDM1RExqCnFXZExnNEtlRzZVRXUxRFYzS3dCZjQ0MVR2dFU4ckg1UEhSbEZpMW1FTWQvanFORTFJZ3doMXBRT1hmVURMMGUKYXc1ZUlveGxJMUhwVDRUS21ETXlCZENlMmFpNm1PUFphcXhha21ZRTJ1UUN4a3dkc3BUQXBldlFHMkRiVEZBRApNUT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
@@ -71,9 +75,11 @@ kubectl get secret
 	  resourceVersion: "888565"
 	  uid: 95ae8158-7bc5-499e-b5f2-4be6b6a4f4af
 	type: kubernetes.io/tls
-	```
-	cluster-admin@node1:~/Desktop$ kubectl get secret domain-cert -o json
-	```
+```
+
+kubectl get secret domain-cert -o json
+
+```
 	{
 		"apiVersion": "v1",
 		"data": {
@@ -90,33 +96,36 @@ kubectl get secret
 		},
 		"type": "kubernetes.io/tls"
 	}
-	```
-	cluster-admin@node1:~/Desktop$ kubectl get secrets -o json > secrets.json
-	cluster-admin@node1:~/Desktop$ kubectl get secret domain-cert -o yaml > domain-cert.yml
-		
-	cluster-admin@node1:~/Desktop$ kubectl delete secret domain-cert
-	```
+```
+
+kubectl get secrets -o json > secrets.json
+kubectl get secret domain-cert -o yaml > domain-cert.yml
+
+kubectl delete secret domain-cert
+```
 	secret "domain-cert" deleted
-	```
+```
 	
-	cluster-admin@node1:~/Desktop$ kubectl get secrets
-	```
+kubectl get secrets
+```
 	NAME                               TYPE                 DATA   AGE
 	sh.helm.release.v1.nfs-server.v1   helm.sh/release.v1   1      21d
-	```
+```
 	
-	cluster-admin@node1:~/Desktop$ kubectl apply -f domain-cert.yml
-	```
+ kubectl apply -f domain-cert.yml
+	
+```
 	secret/domain-cert created
-	```
+```
 	
-	cluster-admin@node1:~/Desktop$ kubectl get secrets
-	```
+kubectl get secrets
+
+```
 	NAME                               TYPE                 DATA   AGE
 	domain-cert                        kubernetes.io/tls    2      3s
 	sh.helm.release.v1.nfs-server.v1   helm.sh/release.v1   1      21d
 
-  ```
+```
 
 2. [hw.yaml](./hw.yaml)
   ```
