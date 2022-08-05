@@ -46,7 +46,7 @@ spec:
           - containerPort: 443
         volumeMounts:
         - name: sample-secret
-          mountPath: /etc/secret-conf.yaml
+          mountPath: /etc/secret-is-there
           readOnly: true
       volumes:
       - name: sample-secret
