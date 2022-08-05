@@ -104,3 +104,11 @@
 	sh.helm.release.v1.nfs-server.v1   helm.sh/release.v1   1      21d
 
   ```
+
+2. 
+  ```
+	cluster-admin@node1:~/Desktop$ kubectl apply -f hw.yaml 
+	secret/sample-secret configured
+	deployment.apps/hello-world created
+	service/hello-world-service unchanged
+  ```
