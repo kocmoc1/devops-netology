@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sample-secret
+type: Opaque
+stringData:
+    SECRET_KEY: TmV0b2xvZ3k=
+    SECRET_EMAIL: c2VjcmV0LWVtYWlsQG5ldG9sb2d5LmNvbQ==
+    PASSWORD: cGFzc3dvcmQ=
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  selector:
+    matchLabels:
+      app: hello-world
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-world-pod
+        image: arungupta/helloworld-spring-boot:latest
+        env: 
+          - name: SECRET_KEY_ENV
+            valueFrom:
+              secretKeyRef:
+                name: sample-secret
+                key: SECRET_KEY
+          - name: SECRET_EMAIL_ENV
+            valueFrom:
+              secretKeyRef:
+                name: sample-secret
+                key: SECRET_SECRET_EMAIL
+          - name: PASSWORD_ENV
+            valueFrom:
+              secretKeyRef:
+                name: sample-secret
+                key: PASSWORD
+        ports: 
+          - containerPort: 80
+          - containerPort: 443
+        volumeMounts:
+        - name: sample-secret
+          mountPath: /etc/secret-conf.yaml
+          readOnly: true
+      volumes:
+      - name: sample-secret
+        secret:
+          secretName: sample-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service
+spec:
+  selector:
+    app: hello-world
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
