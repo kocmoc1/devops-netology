@@ -111,4 +111,24 @@
 	secret/sample-secret configured
 	deployment.apps/hello-world created
 	service/hello-world-service unchanged
+	
+	cluster-admin@node1:~/Desktop$ kubectl exec --stdin --tty hello-world-6fb5fd6c8d-6nhtc -- /bin/bash
+	
+	jboss@hello-world-6fb5fd6c8d-6nhtc ~]$ env | grep SECRET
+	SECRET_EMAIL_ENV=c2VjcmV0LWVtYWlsQG5ldG9sb2d5LmNvbQ==
+	SECRET_KEY_ENV=TmV0b2xvZ3k=
+	
+	[jboss@hello-world-6fb5fd6c8d-6nhtc ~]$ env | grep PASS  
+	PASSWORD_ENV=cGFzc3dvcmQ=
+	
+	[jboss@hello-world-6fb5fd6c8d-6nhtc ~]$ ls -la /etc/secret-is-there/
+	total 4
+	drwxrwxrwt 3 root root  140 Aug  5 05:10 .
+	drwxr-xr-x 1 root root 4096 Aug  5 05:10 ..
+	drwxr-xr-x 2 root root  100 Aug  5 05:10 ..2022_08_05_05_10_26.2205959030
+	lrwxrwxrwx 1 root root   32 Aug  5 05:10 ..data -> ..2022_08_05_05_10_26.2205959030
+	lrwxrwxrwx 1 root root   15 Aug  5 05:10 PASSWORD -> ..data/PASSWORD
+	lrwxrwxrwx 1 root root   19 Aug  5 05:10 SECRET_EMAIL -> ..data/SECRET_EMAIL
+	lrwxrwxrwx 1 root root   17 Aug  5 05:10 SECRET_KEY -> ..data/SECRET_KEY
+	
   ```
