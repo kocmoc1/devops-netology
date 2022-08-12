@@ -1,7 +1,14 @@
-nposk@node1:~/Desktop$ kubectl apply -f 14-2/vault-pod.yaml
+# Домашнее задание 14.2
 
+1. 
+Запуск пода
+```
+cluster-admin@node1:~/Desktop$ kubectl apply -f 14-2/vault-pod.yaml
+```
 
-nposk@node1:~/Desktop$ kubectl describe pod 14.2-netology-vault
+Описание пода
+```
+cluster-admin@node1:~/Desktop$ kubectl describe pod 14.2-netology-vault
 Name:         14.2-netology-vault
 Namespace:    default
 Priority:     0
@@ -56,29 +63,40 @@ Events:
   Normal  Pulled     29s   kubelet            Successfully pulled image "vault" in 14.606055727s
   Normal  Created    29s   kubelet            Created container vault
   Normal  Started    29s   kubelet            Started container vault
-  
-  
-  nposk@node1:~/Desktop$ kubectl get pod 14.2-netology-vault -o json | jq -c '.status.podIPs'
+```
+
+Получение IP
+
+```  
+  cluster-admin@node1:~/Desktop$ kubectl get pod 14.2-netology-vault -o json | jq -c '.status.podIPs'
 [{"ip":"10.233.90.26"}]
+```
 
+Тестирование Vault:
 
-
-python
-
-
+Аутентификация
+```
 >>> client = hvac.Client(
 ...     url='http://10.233.90.26:8200',
 ...     token='aiphohTaa0eeHei'
 ... )
 >>> client.is_authenticated()
 True
+```
+Cоздание secret
+```
 >>> client.secrets.kv.v2.create_or_update_secret(
 ...     path='hvac',
 ...     secret=dict(netology='Big secret!!!'),
 ... )
+
 {'request_id': 'd56272aa-f21e-8257-9ba6-0582b6f320af', 'lease_id': '', 'renewable': False, 'lease_duration': 0, 'data': {'created_time': '2022-08-10T14:43:19.884204554Z', 'custom_metadata': None, 'deletion_time': '', 'destroyed': False, 'version': 1}, 'wrap_info': None, 'warnings': None, 'auth': None}
+```
+
+Чтение secret
+```
 >>> client.secrets.kv.v2.read_secret_version(
 ...     path='hvac',
 ... )
 {'request_id': '305ce4e6-32c0-7a22-f7f4-43b37ad68499', 'lease_id': '', 'renewable': False, 'lease_duration': 0, 'data': {'data': {'netology': 'Big secret!!!'}, 'metadata': {'created_time': '2022-08-10T14:43:19.884204554Z', 'custom_metadata': None, 'deletion_time': '', 'destroyed': False, 'version': 1}}, 'wrap_info': None, 'warnings': None, 'auth': None}
->>> 
+```
