@@ -11,7 +11,7 @@ cluster-admin@node1:~/Desktop/14.3$ kubectl create configmap domain --from-liter
 configmap/domain created
 ```
 Список карт конфигураций
-````
+```
 cluster-admin@node1:~/Desktop/14.3$ kubectl get configmaps
 NAME               DATA   AGE
 domain             1      9s
