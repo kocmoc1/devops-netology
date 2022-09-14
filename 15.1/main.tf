@@ -28,6 +28,7 @@ resource "yandex_vpc_subnet" "private-subnet-a" {
   v4_cidr_blocks = ["192.168.20.0/24"]
   zone           = "ru-central1-a"
   network_id     = "enp3rtt24j6gtando17d"
+  route_table_id = "${yandex_vpc_route_table.private-rt-a.id}"
 }
 
 resource "yandex_vpc_route_table" "private-rt-a" {
