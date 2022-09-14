@@ -83,13 +83,13 @@ applicable law.
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
 ```
-Проверка доступа в интернет - не ok
+Проверка доступа в интернет - ok
 ```
 ubuntu@fhm08ibd353hnbnekdu5:~$ ping 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-^C
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=19.0 ms
 --- 8.8.8.8 ping statistics ---
-4 packets transmitted, 0 received, 100% packet loss, time 3078ms
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
 
 ubuntu@fhm08ibd353hnbnekdu5:~$ ip route
 default via 192.168.20.1 dev eth0 proto dhcp src 192.168.20.13 metric 100
